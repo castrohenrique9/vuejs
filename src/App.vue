@@ -2,7 +2,23 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="VueJS consumindo fotos via API"/>
-    {{ photos }}
+
+    <div v-for="photo in photos" :key="photo.id">
+      <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+        <b-row no-gutters>
+          <b-col md="6">
+            <b-card-img src="https://picsum.photos/400/400/?image=20" class="rounded-0"></b-card-img>
+          </b-col>
+          <b-col md="6">
+            <b-card-body>
+              <b-card-text>
+                {{ photo.title }}
+              </b-card-text>
+            </b-card-body>
+          </b-col>
+        </b-row>
+      </b-card>
+    </div>
   </div>
 </template>
 
@@ -27,7 +43,6 @@ export default {
   }
 
 }
-
 
 
 </script>
