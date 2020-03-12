@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app" class="container-fluid">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="VueJS consumindo fotos via API"/>
+    <HelloWorld msg="VueJS com Bootstrap4 e Axios"/>
 
-    <div v-for="photo in photos" :key="photo.id">
-      <b-card no-body class="overflow-hidden" style="max-width: 540px;">
-        <b-row no-gutters>
+    <b-card-group columns>
+      <b-card no-body class="overflow-hidden" style="max-width: 540px;" v-for="photo in photos" :key="photo.id">
+        <b-row no-gutters id="b-row">
           <b-col md="6">
             <b-card-img v-bind:src="photo.url" class="rounded-0"></b-card-img>
           </b-col>
@@ -18,7 +18,7 @@
           </b-col>
         </b-row>
       </b-card>
-    </div>
+    </b-card-group>
 
   </div>
 </template>
