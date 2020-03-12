@@ -1,11 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
 
    <div>
       <b-card no-body class="overflow-hidden" style="max-width: 540px;">
@@ -14,9 +9,9 @@
             <b-card-img src="https://picsum.photos/400/400/?image=20" class="rounded-0"></b-card-img>
           </b-col>
           <b-col md="6">
-            <b-card-body title="Horizontal Card">
+            <b-card-body title="Nome do card">
               <b-card-text>
-                Texto do card aa
+                Texto do card aads
               </b-card-text>
             </b-card-body>
           </b-col>

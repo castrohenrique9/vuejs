@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="VueJS consumindo fotos via API"/>
+    {{ photos }}
   </div>
 </template>
 
@@ -9,13 +10,26 @@
 import HelloWorld from './components/HelloWorld.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      photos: null
+    }
+  },
+  created() {
+    axios.get('https://jsonplaceholder.typicode.com/photos').then(response => (this.photos = response))
   }
+
 }
+
+
+
 </script>
 
 <style>
