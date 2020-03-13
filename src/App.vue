@@ -2,30 +2,20 @@
   <div id="app" class="container-fluid">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="VueJS com Bootstrap4"/>
-    
-    <div class="card-deck">
-      <div class="col-lg-3 col-md-6 col-sm-12 ma-auto flex" v-for="photo in photos" :key="photo.id">
-        <div class="card mb-4">
-            <img class="card-img-top img-fluid" :src="photo.url" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">{{ photo.title }}</h4>
-            </div>
-        </div>
-      </div>
-    </div>
+    <CardDeck :photos="photos"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import CardDeck from './components/CardDeck.vue'
 import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    CardDeck
   },
   data() {
     return {
