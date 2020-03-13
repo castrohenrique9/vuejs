@@ -1,10 +1,8 @@
 <template>
   <div id="app" class="container-fluid">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="VueJS com Bootstrap4 e Axios"/>
+    <HelloWorld msg="VueJS com Bootstrap4"/>
     
-
-
     <div class="card-deck">
       <div class="col-lg-3 col-md-6 col-sm-12 ma-auto flex" v-for="photo in photos" :key="photo.id">
         <div class="card mb-4">
@@ -13,13 +11,8 @@
                 <h4 class="card-title">{{ photo.title }}</h4>
             </div>
         </div>
-        
-        
       </div>
     </div>
-
-
-
   </div>
 </template>
 
@@ -34,7 +27,6 @@ export default {
   components: {
     HelloWorld
   },
-  
   data() {
     return {
       photos: []
@@ -55,8 +47,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.card {
-  margin: 3px;
 }
 </style>
