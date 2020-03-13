@@ -1,0 +1,13 @@
+version: '3'
+services:
+  vuejs:
+    container_name: vuejs-castro
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node:lts-alpine
+    volumes: 
+      - ".:/app"
+      - "/app/node_modules"
+    ports:
+        - "8085:8080"

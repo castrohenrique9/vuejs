@@ -1,24 +1,9 @@
 # VueJS com Bootstrap4 consumindo end-point
 
-## Project setup
+## Entre na pasta do projeto e inicialize o container docker
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+docker-compose up
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## A porta exposta é a 8085
+http://localhost:8085
