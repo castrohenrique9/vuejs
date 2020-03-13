@@ -2,23 +2,23 @@
   <div id="app" class="container-fluid">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="VueJS com Bootstrap4 e Axios"/>
+    
 
-    <b-card-group columns>
-      <b-card no-body class="overflow-hidden" style="max-width: 540px;" v-for="photo in photos" :key="photo.id">
-        <b-row no-gutters id="b-row">
-          <b-col md="6">
-            <b-card-img v-bind:src="photo.url" class="rounded-0"></b-card-img>
-          </b-col>
-          <b-col md="6">
-            <b-card-body>
-              <b-card-text>
-                {{ photo.title }}
-              </b-card-text>
-            </b-card-body>
-          </b-col>
-        </b-row>
-      </b-card>
-    </b-card-group>
+
+    <div class="card-deck">
+      <div class="col-lg-3 col-md-6 col-sm-12 ma-auto flex" v-for="photo in photos" :key="photo.id">
+        <div class="card mb-4">
+            <img class="card-img-top img-fluid" :src="photo.url" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{ photo.title }}</h4>
+            </div>
+        </div>
+        
+        
+      </div>
+    </div>
+
+
 
   </div>
 </template>
@@ -37,16 +37,14 @@ export default {
   
   data() {
     return {
-      photos: null,
-      url: 'https://via.placeholder.com/150/92c952'
+      photos: []
     }
   },
-  created() {
-    axios.get('https://jsonplaceholder.typicode.com/photos?albumId=1').then(response => (this.photos = response.data))
+  beforeCreate() {
+    axios.get('https://jsonplaceholder.typicode.com/photos?albumId=1')
+    .then(response => (this.photos = response.data))
   }
 }
-
-
 </script>
 
 <style>
@@ -57,5 +55,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.card {
+  margin: 3px;
 }
 </style>
